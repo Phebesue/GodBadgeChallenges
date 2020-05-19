@@ -8,7 +8,7 @@ namespace Menu_Repo
 {
     public class MenuItemsRepo
     {
-        private readonly List<MenuItems> _listOfMenuItems = new List<MenuItems>();
+        private  List<MenuItems> _listOfMenuItems = new List<MenuItems>();
         //Create
         public void AddItemsToList(MenuItems item)
         {
@@ -18,7 +18,7 @@ namespace Menu_Repo
         //Read
         public List<MenuItems> GetMenuItems()
         {
-            Console.Clear();
+          //  Console.Clear();
             return _listOfMenuItems;
         }
         public int MenuItemNum()
@@ -27,7 +27,7 @@ namespace Menu_Repo
             return mealNum;
         }
         //Update
-        public bool UpdateItemOnList(int originalNum, MenuItems item)
+        public bool UpdateItemByNum(int originalNum, MenuItems item)
         {
             //Find the Item
             MenuItems oldItem = GetMenuItemsByNum(originalNum);
@@ -70,19 +70,19 @@ namespace Menu_Repo
         }
 
         //Helper
-        //private MenuItems GetMenuItemsByName(string menuName)
-        //{
-        //    foreach (MenuItems item in _listOfMenuItems)
-        //    {
-        //        if (item.MealName == menuName)
-        //        {
-        //            return item;
-        //        }
-        //    }
+        public MenuItems GetMenuItemsByName(string menuName)
+        {
+            foreach (MenuItems item in _listOfMenuItems)
+            {
+                if (item.MealName == menuName)
+                {
+                    return item;
+                }
+            }
 
-        //    return null;
-        //}
-        private MenuItems GetMenuItemsByNum(int menuNum)
+            return null;
+        }
+        public MenuItems GetMenuItemsByNum(int menuNum)
         {
             foreach (MenuItems item in _listOfMenuItems)
             {
@@ -91,7 +91,7 @@ namespace Menu_Repo
                     return item;
                 }
             }
-
+            
             return null;
         }
 

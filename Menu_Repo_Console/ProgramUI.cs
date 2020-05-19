@@ -96,10 +96,12 @@ namespace Menu_Repo_Console
             string priceAsString = Console.ReadLine();
             newMenuItem.Price = double.Parse(priceAsString);
             _menuItemsRepo.AddItemsToList(newMenuItem);
+            Console.WriteLine("New item added!");
         }
         //View current items dialog
         private void DisplayAllItems()
         {
+            Console.Clear();
             List<MenuItems> menuItems = _menuItemsRepo.GetMenuItems();
             int mealCount = 1;
             foreach (MenuItems item in menuItems)
@@ -142,7 +144,8 @@ namespace Menu_Repo_Console
             string priceAsString = Console.ReadLine();
             newMenuItem.Price = double.Parse(priceAsString);
 
-            //_menuItemsRepo.UpdateItemOnList(originalNum, newMenuItem);
+            _menuItemsRepo.UpdateItemByNum(originalNum, newMenuItem);
+            Console.WriteLine("Item was successfully updated.");
         }
 
         //Delete items dialog
