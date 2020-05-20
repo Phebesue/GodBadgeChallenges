@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BD12205C-F275-4933-9785-08F6A69AB428}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_03_KI_BadgeRepo</RootNamespace>
-    <AssemblyName>03_KI_BadgeRepo</AssemblyName>
+    <ProjectGuid>{2259142C-AFA5-4C42-A8F6-565303DF05AE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>_02_ClaimsConsole</RootNamespace>
+    <AssemblyName>02_ClaimsConsole</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,8 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Badge_Dict.cs" />
+    <Compile Include="ClaimsProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_02_Claims_UI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\02_ClaimsRepo\02_ClaimsRepo.csproj">
+      <Project>{73E717BB-30E5-443D-87ED-4D1A63765BBE}</Project>
+      <Name>02_ClaimsRepo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Menu_Repo\01_CafeMenu_Repo.csproj">
+      <Project>{de366e6c-5151-4781-9bd8-5ca0e98970eb}</Project>
+      <Name>01_CafeMenu_Repo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

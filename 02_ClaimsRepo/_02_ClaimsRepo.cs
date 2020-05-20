@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _03_KI_BadgeRepo
+namespace _02_ClaimsRepo
 {
-    public class Badges
+    public class ClaimsRepo
     {
-        public int BadgeID { get; set; }
-        public
+     //   private Queue<ClaimsClass> _claimsQueue = new Queue();
     }
 }

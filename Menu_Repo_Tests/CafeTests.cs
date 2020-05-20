@@ -26,7 +26,6 @@ namespace Menu_Repo_Tests
             int initialCount = _repo.GetMenuItems().Count;
             int expected = 3;
             Assert.AreEqual(expected, initialCount);
-
         }
         [TestMethod]
         public void AddContentCountShouldIncrease()
@@ -43,37 +42,28 @@ namespace Menu_Repo_Tests
             // Arrange
             MenuItems eggs = new MenuItems(_repo.MenuItemNum(), "Eggs", "Eggs with toast", "eggs, butter, bread", 3.99);
             _repo.AddItemsToList(eggs);
-
             // Act
             MenuItems testContent = _repo.GetMenuItemsByName("Eggs");
-
             // Assert
             Assert.AreEqual(eggs, testContent);
         }
-        [TestMethod]
-        
+        [TestMethod]        
         public void UpdateContentShouldUpdate()
         {
             MenuItems newItem = new MenuItems(_repo.MenuItemNum(), "Eggs", "Eggs with toast", "eggs, butter, bread", 99.99);
             _repo.UpdateItemByNum(3,newItem);            
             double expected = 99.99;
             double actual = _repo.GetMenuItemsByNum(3).Price;
-            Assert.AreEqual(expected, actual);
-            
+            Assert.AreEqual(expected, actual);            
         }
         [TestMethod]
         public void RemoveItemShouldReduceListCount()
-        {
-            
+        {            
             int before = _repo.GetMenuItems().Count;
             _repo.RemoveItemFromList(1);
-
             int expected = 2;
             int actual = _repo.GetMenuItems().Count;
-
             Assert.AreEqual(expected, actual);
         }
     }
 }
-
-

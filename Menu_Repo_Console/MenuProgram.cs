@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Menu_Repo_Console
 {
-    class Program
+    class MenuProgram
     {
         static void Main(string[] args)
         {
-            ProgramUI program = new ProgramUI();
+            MenuProgramUI program = new MenuProgramUI();
             program.Run();
         }
     }

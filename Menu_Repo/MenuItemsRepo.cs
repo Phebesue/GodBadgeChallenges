@@ -14,12 +14,10 @@ namespace Menu_Repo
         {
             _listOfMenuItems.Add(item);            
         }
-
         //Read
         public List<MenuItems> GetMenuItems()
         {
-          //  Console.Clear();
-            return _listOfMenuItems;
+                     return _listOfMenuItems;
         }
         public int MenuItemNum()
         { 
@@ -38,16 +36,13 @@ namespace Menu_Repo
                 oldItem.MealDesc = item.MealDesc;
                 oldItem.Ingredients = item.Ingredients;
                 oldItem.Price = item.Price;
-
                 return true;
             }
             else
             {
                 return false;
             }
-
         }
-
         //Delete
         public bool RemoveItemFromList(int menuNum)
         {
@@ -56,7 +51,6 @@ namespace Menu_Repo
             {
                 return false;
             }
-
             int initialCount = _listOfMenuItems.Count;
             _listOfMenuItems.Remove(item);
             if (initialCount > _listOfMenuItems.Count)
@@ -68,7 +62,6 @@ namespace Menu_Repo
                 return false;
             }
         }
-
         //Helper
         public MenuItems GetMenuItemsByName(string menuName)
         {
@@ -79,7 +72,6 @@ namespace Menu_Repo
                     return item;
                 }
             }
-
             return null;
         }
         public MenuItems GetMenuItemsByNum(int menuNum)
@@ -90,10 +82,8 @@ namespace Menu_Repo
                 {
                     return item;
                 }
-            }
-            
+            }            
             return null;
         }
-
     }
 }

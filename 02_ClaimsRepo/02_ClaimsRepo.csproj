@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BD12205C-F275-4933-9785-08F6A69AB428}</ProjectGuid>
+    <ProjectGuid>{73E717BB-30E5-443D-87ED-4D1A63765BBE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_03_KI_BadgeRepo</RootNamespace>
-    <AssemblyName>03_KI_BadgeRepo</AssemblyName>
+    <RootNamespace>_02_ClaimsRepo</RootNamespace>
+    <AssemblyName>02_ClaimsRepo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Badge_Dict.cs" />
+    <Compile Include="_02_ClaimsClass.cs" />
+    <Compile Include="_02_ClaimsRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

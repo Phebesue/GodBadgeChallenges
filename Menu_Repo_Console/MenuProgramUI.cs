@@ -9,22 +9,19 @@ using System.Threading.Tasks;
 
 namespace Menu_Repo_Console
 {
-    class ProgramUI
+    class MenuProgramUI
     {
         private MenuItemsRepo _menuItemsRepo = new MenuItemsRepo();
-
-        private List<MenuItems> _listOfMenuItems = new List<MenuItems>();
-
         public void Run()
         {
             SeedItemList();
             RunMenu();
-        }//Method that starts Menu CRUD interactions
+        }
         public void RunMenu()
         {
             UIMenu();
         }
-        //UI Menu
+        //Method that starts Menu CRUD interactions
         private void UIMenu()
         {
             bool keepRunning = true;
@@ -40,7 +37,6 @@ namespace Menu_Repo_Console
                     "5. Exit");
                 //Get input
                 string selection = Console.ReadLine();
-
                 //Evaluate Input
                 switch (selection)
                 {
@@ -68,29 +64,22 @@ namespace Menu_Repo_Console
                 Console.WriteLine("Please press anykey to continue...");
                 Console.ReadKey();
                 Console.Clear();
-
             }
         }
         //Create new Items dialog
-        //  newMenuItem.MealNum = _menuItemsRepo.MenuItemNum();
         private void CreateNewItem()
         {
             Console.Clear();
             MenuItems newMenuItem = new MenuItems();
-
             newMenuItem.MealNum = _menuItemsRepo.MenuItemNum();
-
             Console.WriteLine("Enter the new meal name: ");
             newMenuItem.MealName = Console.ReadLine();
-
             //MenuItem Description
             Console.WriteLine("Enter the meal description: ");
             newMenuItem.MealDesc = Console.ReadLine();
-
             //Ingredients 
             Console.WriteLine("Please enter the ingredients: ");
             newMenuItem.Ingredients = Console.ReadLine();
-
             //Price ;
             Console.WriteLine("Please enter the price: ");
             string priceAsString = Console.ReadLine();
@@ -127,27 +116,21 @@ namespace Menu_Repo_Console
             //Take in updated info
             MenuItems newMenuItem = new MenuItems();
             //MenuItem.MealNum = _menuItemsRepo.MenuItemNum();
-
             Console.WriteLine("Enter the new meal name: ");
             newMenuItem.MealName = Console.ReadLine();
-
             //MenuItem Description
             Console.WriteLine("Enter the meal description: ");
             newMenuItem.MealDesc = Console.ReadLine();
-
             //Ingredients 
             Console.WriteLine("Please enter the ingredients: ");
             newMenuItem.Ingredients = Console.ReadLine();
-
             //Price ;
             Console.WriteLine("Please enter the price: ");
             string priceAsString = Console.ReadLine();
             newMenuItem.Price = double.Parse(priceAsString);
-
             _menuItemsRepo.UpdateItemByNum(originalNum, newMenuItem);
             Console.WriteLine("Item was successfully updated.");
         }
-
         //Delete items dialog
         private void RemoveItem()
         {
@@ -157,7 +140,6 @@ namespace Menu_Repo_Console
             Console.WriteLine("Enter the item # you'd like to remove: ");
             string menuNumAsString = Console.ReadLine();
             int input = int.Parse(menuNumAsString);
-
             //Call the delete method
             bool wasDeleted = _menuItemsRepo.RemoveItemFromList(input);
             //If deleted, say so
@@ -172,10 +154,7 @@ namespace Menu_Repo_Console
             }
 
         }
-
-        //Seed method
-
-
+        //Seed 
         private void SeedItemList()
         {
             MenuItems pbj = new MenuItems(_menuItemsRepo.MenuItemNum(), "PB&J", "Peanutbutter sandwich with veggie sticks", "peanutbutter, grape jelly, bread, carrots, celery", 8.99);
@@ -184,10 +163,6 @@ namespace Menu_Repo_Console
             _menuItemsRepo.AddItemsToList(macnCheese);
             MenuItems tunaMelt = new MenuItems(_menuItemsRepo.MenuItemNum(), "Tuna Melt", "Grilled tuna fish sanwich with cheese served with a side of tomato soup", "Tuna, mayo, pickle relish, cheese slices, bread, butter, tomato soup", 9.99);
             _menuItemsRepo.AddItemsToList(tunaMelt);
-
         }
-
     }
 }
-
-
