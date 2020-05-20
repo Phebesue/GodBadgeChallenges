@@ -24,8 +24,5 @@ namespace Menu_Repo
             Ingredients = ingredients;
             Price = price;
         }
-
     }
 }
-
-

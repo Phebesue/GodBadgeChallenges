@@ -9,7 +9,7 @@ namespace Menu_Repo_Tests
     public class CafeTests
     {
         private MenuItemsRepo _repo = new MenuItemsRepo();
-        public List<MenuItems> _listOfMenuItems = new List<MenuItems>();
+      //  public List<MenuItems> _listOfMenuItems = new List<MenuItems>();
         [TestInitialize]
         public void SeedItemList()
         {

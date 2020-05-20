@@ -8,7 +8,7 @@ namespace Menu_Repo
 {
     public class MenuItemsRepo
     {
-        private  List<MenuItems> _listOfMenuItems = new List<MenuItems>();
+        public  List<MenuItems> _listOfMenuItems = new List<MenuItems>();
         //Create
         public void AddItemsToList(MenuItems item)
         {
