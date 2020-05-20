@@ -114,7 +114,6 @@ namespace _02_ClaimsConsole
                     Console.ReadLine();
                     break;
             }
-
             Console.WriteLine("Enter Description: ");
             newclaimsClass.Description = Console.ReadLine();
             Console.WriteLine("Enter Claim Amount: ");

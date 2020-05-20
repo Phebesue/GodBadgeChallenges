@@ -26,6 +26,5 @@ namespace _02_ClaimsRepo
             DateOfIncident = dateOfIncident;
             DateOfClaim = dateOfClaim;
         }
-
     }
 }
