@@ -9,8 +9,7 @@ namespace Menu_Repo_Tests
     public class CafeTests
     {
         private MenuItemsRepo _repo = new MenuItemsRepo();
-      //  public List<MenuItems> _listOfMenuItems = new List<MenuItems>();
-        [TestInitialize]
+              [TestInitialize]
         public void SeedItemList()
         {
             MenuItems pbj = new MenuItems(_repo.MenuItemNum(), "PB&J", "Peanutbutter sandwich with veggie sticks", "peanutbutter, grape jelly, bread, carrots, celery", 8.99);

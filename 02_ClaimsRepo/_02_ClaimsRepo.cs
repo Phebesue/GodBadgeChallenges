@@ -14,7 +14,7 @@ namespace _02_ClaimsRepo
         {
             return _claimsQueue;
         }
-        //Process
+        //Process Claim
         public void ProcessNextClaim()
         {
             ClaimsClass show = _claimsQueue.Peek();
@@ -32,6 +32,7 @@ namespace _02_ClaimsRepo
                 case "yes":
                 case "Yes":
                     Console.Clear();
+                    //   Delete
                     _claimsQueue.Dequeue();
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("\n   Claim Processed\n\n");
@@ -56,5 +57,18 @@ namespace _02_ClaimsRepo
         {
             _claimsQueue.Enqueue(newclaimsClass);
         }
+
+        //Delete helper
+        public void DequeueClaim()
+        {
+            _claimsQueue.Dequeue();
+        }
+        //Peek Helper
+        public void Peek()
+        {
+            _claimsQueue.Peek();
+        }
     }
+
+
 }
