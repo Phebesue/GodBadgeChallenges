@@ -12,7 +12,7 @@ namespace Menu_Repo_Console
     class MenuProgramUI
     {
         private MenuItemsRepo _menuItemsRepo = new MenuItemsRepo();
-       // private List<MenuItems> _listOfMenuItems = new List<MenuItems>();
+        // private List<MenuItems> _listOfMenuItems = new List<MenuItems>();
         public void Run()
         {
             SeedItemList();

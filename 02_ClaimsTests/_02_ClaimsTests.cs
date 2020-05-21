@@ -36,13 +36,10 @@ namespace _02_ClaimsTests
         }
         [TestMethod]
         public void GetPeekClaimsShouldGetContent()
-        {
-           
+        {           
             ClaimsClass testContent = _repo.Peek();
-            Assert.AreEqual(ClaimsClass first, testContent);
-
-
-
+           
+            Assert.AreEqual(3000.52, testContent.ClaimAmt);
 
         }
         [TestMethod]
@@ -52,26 +49,6 @@ namespace _02_ClaimsTests
             _repo.DequeueClaim();
             int newCount = _repo.ShowAllClaims().Count;
             Assert.AreNotEqual(initialCount, newCount);
-        }
-        [TestMethod]
-        public void SomeNameHere1()
-        {
-            //int initialCount = _repo.ShowAllClaims().Count;
-            //ClaimsClass fourth = new ClaimsClass(4, ClaimType.Car, "Accident on Stop 11", 600.75, "3/30/2019", "5/12/2020");
-            //_repo.EnterNewClaim(fourth);
-            //int newCount = _repo.ShowAllClaims().Count;
-            //Assert.AreNotEqual(initialCount, newCount);
-
-        }
-        [TestMethod]
-        public void SomeNameHere2()
-        {
-            //int initialCount = _repo.ShowAllClaims().Count;
-            //ClaimsClass fourth = new ClaimsClass(4, ClaimType.Car, "Accident on Stop 11", 600.75, "3/30/2019", "5/12/2020");
-            //_repo.EnterNewClaim(fourth);
-            //int newCount = _repo.ShowAllClaims().Count;
-            //Assert.AreNotEqual(initialCount, newCount);
-
         }
     }
 }
