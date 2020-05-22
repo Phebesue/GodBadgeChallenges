@@ -50,7 +50,7 @@ namespace _06_GreenPlan_Console
                         ViewAllCars();
                         break;
                     case "3":
-                        ViewAllCars();
+                        ViewCarsByType();
                         break;
                     case "4":
                         UpdateACar();
@@ -136,74 +136,80 @@ namespace _06_GreenPlan_Console
             }
         }
         //Working efforts to get cars by Enum:Type
-        //private void ViewCarsByType()
-        //{
-        //    string madeUp;
+        private void ViewCarsByType()
+        {
+           
 
-        //    GreenPlan newGreenPlan = new GreenPlan();
-        //    // GreenPlan.Type = car.type;
-        //    Console.WriteLine("Select the Type you'd like to see: \n" +
-        //         "  1. Electric\n" +
-        //         "  2. Hybrid\n" +
-        //         "  3. Gas\n");
-        //    string carInputType = Console.ReadLine();
-        //    int typeASInt = int.Parse(carInputType);
-        //    newGreenPlan.Type =(GreenType)typeASInt;
+            GreenPlan newGreenPlan = new GreenPlan();
+            // GreenPlan.Type = car.type;
+            Console.WriteLine("Select the Type you'd like to see: \n" +
+                     "  1. Electric\n" +
+                     "  2. Hybrid\n" +
+                     "  3. Gas\n");
+            string carInputType = Console.ReadLine();
+            int typeASInt = int.Parse(carInputType);
+            newGreenPlan.Type = (GreenType)typeASInt;
 
-        //    switch (carInputType)
-        //    {
-        //        case "1":
-        //            string carInputType = Console.ReadLine();
-        //            int typeASInt = int.Parse(carInputType);
-        //            newGreenPlan.Type = (GreenType)typeASInt;
-        //            break;
-        //        case "2":
-        //            madeUp = GreenType.Hybrid;
-        //            break;
-        //        case "3":
-        //            madeUp = GreenType.Gas;
-        //            break;
-        //        default:
-        //            // Invalid input
-        //            Console.ForegroundColor = ConsoleColor.DarkYellow;
-        //            Console.WriteLine("\n\n  Please enter a valid option.");
-        //            Console.ForegroundColor = ConsoleColor.Gray;
-        //            Console.ReadLine();
-        //            break;
-        //    }
-        //    private void TypeCars()
-        //    {
-        //        Console.Clear();
-        //        List<GreenPlan> typeCars = _greenPlanRepo.GetCars();
-        //        int carCounts = 1;
-        //        madeUp = GreenPlan.Type;
-        //        foreach (GreenPlan car in greenPlan)
-        //        {
-        //            car.CarNum = carCounts;
-        //            _greenPlanRepo.GetCars();
-        //            if (car.Type = madeUp) ;
-        //            Console.WriteLine($"{car.CarNum}   {car.Type},{car.Make}, {car.Model}, {car.CityMpg}/{car.HwyMpg}, Starting MSRP: {car.Msrp}");
-        //            //            carCount++;
-        //            //        }
-        //            //    }
-        //            //}
+            switch (carInputType)
+            {
+                case "1":
+                    //string carInputType = Console.ReadLine();
+                    //  int typeASInt = int.Parse(carInputType);
+                    //   newGreenPlan.Type = (GreenType)typeASInt;
+                    TypeCars(GreenType.Electric);
+                    break;
+                case "2":
+                    TypeCars(GreenType.Hybrid);
+                    break;
+                case "3":
+                    TypeCars(GreenType.Gas);
+                    break;
+                default:
+                    // Invalid input
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine("\n\n  Please enter a valid option.");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.ReadLine();
+                    break;
+            }
+        }
+        private void TypeCars(GreenType type)
+        {
+            Console.Clear();
+            List<GreenPlan> typeCars = _greenPlanRepo.GetCars();
+            int carCounts = 1;
 
-        // private void Model()
-        //{
-        //    Console.Clear();
-        //    List<GreenPlan> greenPlan = _greenPlanRepo.GetCars();
-        //    //Display options
-        //    ViewAllCars();
-        //    //Get car they want to update
-        //    Console.WriteLine("Enter the car model you'd like to retrieve: ");
-        //    string model = Console.ReadLine();
-        //    foreach (GreenPlan car in greenPlan)
-        //    {
-        //        _greenPlanRepo.GetCarsByModel(model);
-        //        Console.WriteLine($"{car.CarNum}   {car.Type},{car.Make}, {car.Model}, {car.CityMpg}/{car.HwyMpg}, Starting MSRP: {car.Msrp}");
-        //    }
-        //}
+            foreach (GreenPlan car in typeCars)
+            {
+                car.CarNum = carCounts;
+                _greenPlanRepo.GetCars();
+                if (car.Type == type) 
+                {
+                    Console.WriteLine($"{car.CarNum}   {car.Type},{car.Make}, {car.Model}, {car.CityMpg}/{car.HwyMpg}, Starting MSRP: {car.Msrp}");
+                    carCounts++;
+                }
+
+            }
+       //     Console.ReadKey();
         
+        }
+
+        private void Model()
+        {
+            Console.Clear();
+            List<GreenPlan> greenPlan = _greenPlanRepo.GetCars();
+            //Display options
+            ViewAllCars();
+            //Get car they want to update
+            Console.WriteLine("Enter the car model you'd like to retrieve: ");
+            string model = Console.ReadLine();
+            foreach (GreenPlan car in greenPlan)
+            {
+                _greenPlanRepo.GetCarsByModel(model);
+                Console.WriteLine($"{car.CarNum}   {car.Type},{car.Make}, {car.Model}, {car.CityMpg}/{car.HwyMpg}, Starting MSRP: {car.Msrp}");
+            }
+        }
+
         //Update cars dialog
         private void UpdateACar()
         {

@@ -31,29 +31,29 @@ namespace _06_GreenPlan_Repo
         //    }
         //    return null;
         //}
-        //public string PullGreenType(GreenType plan)
-        //{
-        //    string car1;
-        //    foreach (GreenPlan car in _listOfCars)
-        //    {
-        //        if (plan == car.Type)
-        //        {
-        //            return
-        //        }
-        //    }
-        //    return
-        //}
-        //public GreenPlan GetCarsByModel(string model)
-        //{
-        //    foreach (GreenPlan car in _listOfCars)
-        //    {
-        //        if (car.Model == model)
-        //        {
-        //            return car;
-        //        }
-        //    }
-        //    return null;
-        //}
+        ////public string PullGreenType(GreenType plan)
+        ////{
+        ////    string car1;
+        ////    foreach (GreenPlan car in _listOfCars)
+        ////    {
+        ////        if (plan == car.Type)
+        ////        {
+        ////            return
+        ////        }
+        ////    }
+        ////    return
+        ////}
+        public GreenPlan GetCarsByModel(string model)
+        {
+            foreach (GreenPlan car in _listOfCars)
+            {
+                if (car.Model == model)
+                {
+                    return car;
+                }
+            }
+            return null;
+        }
         public GreenPlan GetCarsByNum(int carNum)
         {
             foreach (GreenPlan car in _listOfCars)

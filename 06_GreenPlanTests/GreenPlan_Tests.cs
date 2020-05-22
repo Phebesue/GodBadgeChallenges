@@ -14,13 +14,19 @@ namespace _06_GreenPlanTests
         public void CarSeeds()
         {
             GreenPlan car1 = new GreenPlan(GreenType.Electric, "Nissan", "Leaf", "123", "99", 31600);
+            car1.CarNum = 1;
             GreenPlan car2 = new GreenPlan(GreenType.Electric, "Kia", "Niro EV", "123", "102", 39090);
+            car2.CarNum = 2;
             //GreenPlan car3 = new GreenPlan(GreenType.Electric, "Tesla", "Model S", "148", "132", 39990);
             GreenPlan car4 = new GreenPlan(GreenType.Hybrid, "Toyota", "Prius", "58", "53", 24325);
+            car4.CarNum = 3;
             GreenPlan car5 = new GreenPlan(GreenType.Hybrid, "Ford", "Fusion", "43", "41", 28000);
+            car5.CarNum = 4;
             //GreenPlan car6 = new GreenPlan(GreenType.Hybrid, "Lexus", "ES", "43", "44", 39900);
             GreenPlan car7 = new GreenPlan(GreenType.Gas, "Hyubdai", "Elantra", "33", "41", 19300);
+            car7.CarNum = 5;
             GreenPlan car8 = new GreenPlan(GreenType.Gas, "Cheverolet", "Cruze", "31", "48", 17995);
+            car8.CarNum = 6;
             //GreenPlan car9 = new GreenPlan(GreenType.Gas, "Volkswagon", "Beetle", "26", "33", 20895);
             _repo.AddCarsToList(car1);
             _repo.AddCarsToList(car2);
@@ -54,6 +60,7 @@ namespace _06_GreenPlanTests
         public void UpdateContentShouldUpdate()
         {
             GreenPlan newCar = new GreenPlan(GreenType.Gas, "Volkswagon", "Beetle", "206", "303", 38000);
+            
             _repo.UpdateCarByNum(6, newCar);
             int expected = 38000;
             int actual = _repo.GetCarsByNum(6).Msrp;
