@@ -49,17 +49,15 @@ namespace _06_GreenPlanTests
             int newCount = _repo.GetCars().Count;
             Assert.AreNotEqual(initialCount, newCount);
         }
-      
+
         [TestMethod]
         public void UpdateContentShouldUpdate()
         {
             GreenPlan newCar = new GreenPlan(GreenType.Gas, "Volkswagon", "Beetle", "206", "303", 38000);
             _repo.UpdateCarByNum(6, newCar);
-            _repo.GetCars();
             int expected = 38000;
             int actual = _repo.GetCarsByNum(6).Msrp;
-            Console.WriteLine(actual);
-           // Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void RemoveItemShouldReduceListCount()

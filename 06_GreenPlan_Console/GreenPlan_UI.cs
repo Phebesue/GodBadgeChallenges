@@ -135,6 +135,7 @@ namespace _06_GreenPlan_Console
                 carCount++;
             }
         }
+        //Working efforts to get cars by Enum:Type
         //private void ViewCarsByType()
         //{
         //    string madeUp;
@@ -187,10 +188,7 @@ namespace _06_GreenPlan_Console
         //            //    }
         //            //}
 
-
-        //Update cars dialog
-
-       // private void Model()
+        // private void Model()
         //{
         //    Console.Clear();
         //    List<GreenPlan> greenPlan = _greenPlanRepo.GetCars();
@@ -205,7 +203,8 @@ namespace _06_GreenPlan_Console
         //        Console.WriteLine($"{car.CarNum}   {car.Type},{car.Make}, {car.Model}, {car.CityMpg}/{car.HwyMpg}, Starting MSRP: {car.Msrp}");
         //    }
         //}
-
+        
+        //Update cars dialog
         private void UpdateACar()
         {
             //Display options for update
