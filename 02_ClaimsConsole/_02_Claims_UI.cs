@@ -84,7 +84,7 @@ namespace _02_ClaimsConsole
 
             ClaimsClass show = _claimsRepo.Peek();
             // _claimsRepo.Peek();
-            Console.WriteLine($"   ClaimID: {show.ClaimID}\n\n   Type: {show.ClmType}\n\n   Desc: {show.Description}\n\n   Amount of Claim: ${show.ClaimAmt}\n\n   Date of Incident: {show.DateOfIncident}\n\n   Date of Claim: {show.DateOfClaim} ");
+            Console.WriteLine($"\n\n\n   ClaimID: {show.ClaimID}\n\n   Type: {show.ClmType}\n\n   Desc: {show.Description}\n\n   Amount of Claim: ${show.ClaimAmt}\n\n   Date of Incident: {show.DateOfIncident}\n\n   Date of Claim: {show.DateOfClaim} ");
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("\n\nWould you like to process this claim?");
             Console.ForegroundColor = ConsoleColor.Gray;
@@ -164,7 +164,7 @@ namespace _02_ClaimsConsole
         // SeedClaims
         private void SeedClaims()
         {
-            ClaimsClass first = new ClaimsClass(1, ClaimType.Car, "car accident on I-275", 800.50, "05/01/2020", "05/19/2020");
+            ClaimsClass first = new ClaimsClass(1, ClaimType.Car, "car accident on I-74", 8000.53, "05/01/2020", "05/19/2020");
             ClaimsClass second = new ClaimsClass(2, ClaimType.Car, "Accident on Stop 11", 600.75, "3/30/2020", "5/12/2020");
             _claimsRepo.EnterNewClaim(first);
             _claimsRepo.EnterNewClaim(second);

@@ -77,15 +77,12 @@ namespace _06_GreenPlan_Console
                 Console.Clear();
             }
         }
-
-
         //Add a new car dialog
         private void AddANewCar()
         {
             Console.Clear();
             GreenPlan newGreenPlan = new GreenPlan();
             //  newGreenPlan.CarNum = _greenPlanRepo.CarNum();
-
             Console.WriteLine("Select the new car type: \n" +
                  "1. Electric\n" +
                  "2. Hybrid\n" +
@@ -110,19 +107,14 @@ namespace _06_GreenPlan_Console
                     Console.ReadLine();
                     break;
             }
-
             Console.WriteLine("Enter the car make: \n");
             newGreenPlan.Make = Console.ReadLine();
-
             Console.WriteLine("Enter the car model: \n");
             newGreenPlan.Model = Console.ReadLine();
-
             Console.WriteLine("Enter the car's City MPG: \n");
             newGreenPlan.CityMpg = Console.ReadLine();
-
             Console.WriteLine("Enter the car's Hwy MPG: \n");
             newGreenPlan.HwyMpg = Console.ReadLine();
-
             Console.WriteLine("Enter the car starting MSRP: \n");
             string msrpAmtAsString = Console.ReadLine();
             newGreenPlan.Msrp = int.Parse(msrpAmtAsString);
@@ -142,22 +134,27 @@ namespace _06_GreenPlan_Console
                 Console.WriteLine($"{car.CarNum}   {car.Type},{car.Make}, {car.Model}, {car.CityMpg}/{car.HwyMpg}, Starting MSRP: {car.Msrp}");
                 carCount++;
             }
-
         }
         //private void ViewCarsByType()
         //{
-        //    madeup = 0;
-        //        GreenPlan newGreenPlan = new GreenPlan();
-        //    GreenPlan.Type = car.type;
+        //    string madeUp;
+
+        //    GreenPlan newGreenPlan = new GreenPlan();
+        //    // GreenPlan.Type = car.type;
         //    Console.WriteLine("Select the Type you'd like to see: \n" +
         //         "  1. Electric\n" +
         //         "  2. Hybrid\n" +
         //         "  3. Gas\n");
         //    string carInputType = Console.ReadLine();
+        //    int typeASInt = int.Parse(carInputType);
+        //    newGreenPlan.Type =(GreenType)typeASInt;
+
         //    switch (carInputType)
         //    {
         //        case "1":
-        //            car.type = Enum.Parse(typeof (GreenType));
+        //            string carInputType = Console.ReadLine();
+        //            int typeASInt = int.Parse(carInputType);
+        //            newGreenPlan.Type = (GreenType)typeASInt;
         //            break;
         //        case "2":
         //            madeUp = GreenType.Hybrid;
@@ -183,21 +180,38 @@ namespace _06_GreenPlan_Console
         //        {
         //            car.CarNum = carCounts;
         //            _greenPlanRepo.GetCars();
-        //            if (car.Type = madeUp);
+        //            if (car.Type = madeUp) ;
         //            Console.WriteLine($"{car.CarNum}   {car.Type},{car.Make}, {car.Model}, {car.CityMpg}/{car.HwyMpg}, Starting MSRP: {car.Msrp}");
-        //            carCount++;
-        //        }
-        //    }
-        //}
+        //            //            carCount++;
+        //            //        }
+        //            //    }
+        //            //}
 
 
         //Update cars dialog
+
+       // private void Model()
+        //{
+        //    Console.Clear();
+        //    List<GreenPlan> greenPlan = _greenPlanRepo.GetCars();
+        //    //Display options
+        //    ViewAllCars();
+        //    //Get car they want to update
+        //    Console.WriteLine("Enter the car model you'd like to retrieve: ");
+        //    string model = Console.ReadLine();
+        //    foreach (GreenPlan car in greenPlan)
+        //    {
+        //        _greenPlanRepo.GetCarsByModel(model);
+        //        Console.WriteLine($"{car.CarNum}   {car.Type},{car.Make}, {car.Model}, {car.CityMpg}/{car.HwyMpg}, Starting MSRP: {car.Msrp}");
+        //    }
+        //}
+
         private void UpdateACar()
         {
             //Display options for update
             ViewAllCars();
             //Get car they want to update
-            Console.WriteLine("Enter the item # you'd like to update: ");
+            Console.WriteLine("Enter the car # you'd like to update: ");
             string carNumAsString = Console.ReadLine();
             int origNum = int.Parse(carNumAsString);
             //Take in updated info
@@ -226,19 +240,14 @@ namespace _06_GreenPlan_Console
                     Console.ReadLine();
                     break;
             }
-
             Console.WriteLine("Enter the car make: ");
             newGreenPlan.Make = Console.ReadLine();
-
             Console.WriteLine("Enter the car model: ");
             newGreenPlan.Model = Console.ReadLine();
-
             Console.WriteLine("Enter the car's City MPG: ");
             newGreenPlan.CityMpg = Console.ReadLine();
-
             Console.WriteLine("Enter the car's Hwy MPG: ");
             newGreenPlan.HwyMpg = Console.ReadLine();
-
             Console.WriteLine("Enter the car starting MSRP: ");
             string msrpAmtAsString = Console.ReadLine();
             newGreenPlan.Msrp = int.Parse(msrpAmtAsString);
@@ -266,7 +275,6 @@ namespace _06_GreenPlan_Console
             {
                 Console.WriteLine("Car could not be removed");
             }
-
         }
         //Seed 
         private void CarSeeds()
@@ -289,16 +297,9 @@ namespace _06_GreenPlan_Console
             _greenPlanRepo.AddCarsToList(car7);
             _greenPlanRepo.AddCarsToList(car8);
             _greenPlanRepo.AddCarsToList(car9);
-
-
         }
     }
 }
-
-
-
-
-
 
 
 

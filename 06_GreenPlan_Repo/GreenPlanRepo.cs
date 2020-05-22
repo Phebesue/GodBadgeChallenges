@@ -19,6 +19,7 @@ namespace _06_GreenPlan_Repo
         {
             return _listOfCars;
         }
+        //Working efforts to get cars by Enum:Type
         //public GreenPlan GetCarsByType(string type)
         //{
         //    foreach (GreenPlan car in _listOfCars)
@@ -27,22 +28,32 @@ namespace _06_GreenPlan_Repo
         //        {
         //            return car;
         //        }
-
-
         //    }
         //    return null;
         //}
-        ////public GreenPlan GetCarsByModel(string model)
-        ////{
-        ////    foreach (GreenPlan car in _listOfCars)
-        ////    {
-        ////        if (car.Model == model)
-        ////        {
-        ////            return car;
-        ////        }
-        ////    }
-        ////    return null;
-        ////}
+        //public string PullGreenType(GreenType plan)
+        //{
+        //    string car1;
+        //    foreach (GreenPlan car in _listOfCars)
+        //    {
+        //        if (plan == car.Type)
+        //        {
+        //            return
+        //        }
+        //    }
+        //    return
+        //}
+        //public GreenPlan GetCarsByModel(string model)
+        //{
+        //    foreach (GreenPlan car in _listOfCars)
+        //    {
+        //        if (car.Model == model)
+        //        {
+        //            return car;
+        //        }
+        //    }
+        //    return null;
+        //}
         public GreenPlan GetCarsByNum(int carNum)
         {
             foreach (GreenPlan car in _listOfCars)
@@ -54,8 +65,6 @@ namespace _06_GreenPlan_Repo
             }
             return null;
         }
-
-
         //Update
         //public bool UpdateCarByModel(string origModel, GreenPlan car)
         //{

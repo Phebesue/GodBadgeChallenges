@@ -9,7 +9,7 @@ namespace Menu_Repo_Tests
     public class CafeTests
     {
         private MenuItemsRepo _repo = new MenuItemsRepo();
-              [TestInitialize]
+        [TestInitialize]
         public void SeedItemList()
         {
             MenuItems pbj = new MenuItems(_repo.MenuItemNum(), "PB&J", "Peanutbutter sandwich with veggie sticks", "peanutbutter, grape jelly, bread, carrots, celery", 8.99);
@@ -46,19 +46,18 @@ namespace Menu_Repo_Tests
             // Assert
             Assert.AreEqual(eggs, testContent);
         }
-        [TestMethod]        
+        [TestMethod]
         public void UpdateContentShouldUpdate()
         {
             MenuItems newItem = new MenuItems(_repo.MenuItemNum(), "Eggs", "Eggs with toast", "eggs, butter, bread", 99.99);
-            _repo.UpdateItemByNum(3,newItem);            
+            _repo.UpdateItemByNum(3, newItem);
             double expected = 99.99;
             double actual = _repo.GetMenuItemsByNum(3).Price;
-            Assert.AreEqual(expected, actual);            
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void RemoveItemShouldReduceListCount()
-        {            
-            int before = _repo.GetMenuItems().Count;
+        {
             _repo.RemoveItemFromList(1);
             int expected = 2;
             int actual = _repo.GetMenuItems().Count;
